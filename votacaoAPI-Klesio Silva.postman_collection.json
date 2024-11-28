@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "aa4347f7-0ba7-454e-b53b-43441ff320a8",
+		"name": "votacaoAPI-Klesio Silva",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32866418"
+	},
+	"item": [
+		{
+			"name": "cpf",
+			"item": [
+				{
+					"name": "gerar cpf",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cpf/generate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cpf",
+								"generate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "podeVotar validacao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cpf/68557845855",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cpf",
+								"68557845855"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cadastrar pauta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\":\"pauta primaria\",\r\n    \"descricao\": \"plenario legislativo votara a emenda 123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pautas/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pautas",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "abrir Sessao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"duracao\": 1 //em minutos\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pautas/2/sessao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pautas",
+						"2",
+						"sessao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obter Resultado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pautas/1/resultado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pautas",
+						"1",
+						"resultado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "votar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"voto\":\"SIM\",\r\n    \"associadoId\": \"67568423303\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pautas/1/votar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pautas",
+						"1",
+						"votar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
